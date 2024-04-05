@@ -7,15 +7,18 @@ from django.shortcuts import render
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
+
+from .constans import (EXCEL_SAVE_DIRECTORY, WAIT_FOR_FIRST_LOADING,
+                       WAIT_FOR_NEXT_LOADING)
 
 
 def parse_steam_accounts(nickname):
     url = f'https://steamcommunity.com/search/users/#text={nickname}'
-    driver = webdriver.Chrome()  # Используйте путь к вашему драйверу браузера
+    driver = webdriver.Chrome()
     driver.get(url)
-    time.sleep(3)
+    time.sleep(WAIT_FOR_FIRST_LOADING)
 
     accounts = []
     while True:
@@ -40,10 +43,10 @@ def parse_steam_accounts(nickname):
             accounts.append(account_info)
 
         try:
-            next_page_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@onclick='CommunitySearch.NextPage(); return false;']")))
+            next_page_button = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.XPATH, "//a[@onclick='CommunitySearch.NextPage(); return false;']")))
             if next_page_button:
                 next_page_button.click()
-                time.sleep(1)
+                time.sleep(WAIT_FOR_NEXT_LOADING)
         except TimeoutException:
             break
 
@@ -52,8 +55,7 @@ def parse_steam_accounts(nickname):
 
 
 def save_to_excel(data, filename):
-    save_directory = r'D:\dev\SteamGetAccount'
-    save_path = os.path.join(save_directory, filename)
+    save_path = os.path.join(EXCEL_SAVE_DIRECTORY, filename)
     wb = openpyxl.Workbook()
     ws = wb.active
     for account in data:

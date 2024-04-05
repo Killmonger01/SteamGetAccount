@@ -5,4 +5,4 @@ WAIT_FOR_FIRST_LOADING = 3
 WAIT_FOR_NEXT_LOADING = 1
 # Впишите в эту переменную директерию в которой вы хотите сохранять эксель
 # Например: r'D:\dev\SteamGetAccount'
-
+EXCEL_SAVE_DIRECTORY = r'D:\dev\SteamGetAccount'

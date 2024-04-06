@@ -25,7 +25,8 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 - укажите директерию для сохранения excel в файле \SteamGetAccount\steam\constans.py
-- 
+- Запуск проекта
 ```
-
+python manage.py runserver
 ```
+- заходите на http://127.0.0.1:8000/ и вводите ник после чего в директерии которую вы указали появится excel с нужными данными

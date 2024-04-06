@@ -13,17 +13,15 @@
 - JavaScript
 - HTML
 - CSS
-# Как запустить локально
+# Как запустить локально(Windows)
 - Создайте и активируйте вертуальное окружение
 ```
 python -m venv venv
-# Для windows
 source venv/Scripts/activate
-# Для Mac
-source venv/bin/activate
 ```
-- Обновите pip
+- Обновите pip и установите зависимости
 ```
 python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
-
+- 

@@ -17,10 +17,8 @@
 - Создайте вертуальное окружение
 ```
 python -m venv venv
-# Для Windows
-source venv/Scripts/activate
-# Для MacOS, Linux
-source venv/bin/activate
+source venv/Scripts/activate # Для Windows
+source venv/bin/activate # Для MacOS, Linux
 ```
 - Обновите pip и установите зависимости
 ```

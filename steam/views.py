@@ -72,7 +72,6 @@ def save_to_excel(data, filename):
                    country,
                    name]
 
-            # Добавление match_info в следующие столбцы
             match_info = account.get('match_info', [])
             row.extend(match_info)
 

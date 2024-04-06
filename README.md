@@ -19,5 +19,11 @@
 python -m venv venv
 # Для windows
 source venv/Scripts/activate
+# Для Mac
+source venv/bin/activate
 ```
-- 
+- Обновите pip
+```
+python -m pip install --upgrade pip
+```
+

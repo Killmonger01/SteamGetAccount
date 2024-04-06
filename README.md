@@ -24,4 +24,8 @@ source venv/Scripts/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
+- укажите директерию для сохранения excel в файле \SteamGetAccount\steam\constans.py
 - 
+```
+
+```

@@ -8,8 +8,8 @@
 # Cтек
 - Python
 - Django
-- selenium
-- bs4
+- Selenium
+- BS4
 - JavaScript
 - HTML
 - CSS

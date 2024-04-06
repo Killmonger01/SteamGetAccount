@@ -13,4 +13,11 @@
 - JavaScript
 - HTML
 - CSS
-
+# Как запустить локально
+- Создайте и активируйте вертуальное окружение
+```
+python -m venv venv
+# Для windows
+source venv/Scripts/activate
+```
+- 
